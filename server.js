@@ -1,7 +1,7 @@
 // const { Socket } = require("dgram");
 const express = require("express");
 const app = express();
-const port = 3000;
+// const port = 3000;
 const server = require("http").Server(app);
 // const { v4: uuidv4 } = require("uuid");
 const { v4: uuidv4, validate: uuidValidate } = require("uuid");
@@ -73,4 +73,4 @@ io.on('connection', socket => {
 
 
 
-server.listen(port || console.log("here we go"));
+server.listen(process.env.PORT||3030)
