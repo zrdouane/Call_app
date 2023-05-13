@@ -26,25 +26,25 @@ app.get('/', (req, res) => {
 	res.render('anime');
 });
 
-// app.get('/room', (req, res) => {
-// 	res.redirect(`/${uuidv4()}`);
-// });
+app.get('/room', (req, res) => {
+	res.redirect(`/${uuidv4()}`);
+});
 
 // app.get('/:room', (req, res) => {
 // 	res.render("room",{ roomId : req.params.room })
 // });
 
 // generate id and redirecte to /:room
-app.get('/room', (req, res) => {
-	const roomId = uuidv4();
+// app.get('/room', (req, res) => {
+// 	const roomId = uuidv4();
   
-	// Redirect only if the generated roomId is valid
-	if (uuidValidate(roomId)) {
-	  res.redirect(`/${roomId}`); /* check if the room id generated. */
-	} else {
-	  res.status(500).send("Failed to generate a valid room ID."); /* if the id not generated response with http status 500(internal server problem) */
-	}
-});
+// 	// Redirect only if the generated roomId is valid
+// 	if (uuidValidate(roomId)) {
+// 	  res.redirect(`/${roomId}`); /* check if the room id generated. */
+// 	} else {
+// 	  res.status(500).send("Failed to generate a valid room ID."); /* if the id not generated response with http status 500(internal server problem) */
+// 	}
+// });
 
 // set a middleware to home page & fix the old probleme of acces to call without the right id.
 app.get('/:room', (req, res, next) => {
