@@ -40,7 +40,7 @@ app.get('/room', (req, res) => {
   
 	// Redirect only if the generated roomId is valid
 	if (uuidValidate(roomId)) {
-	  res.redirect(`/:room${roomId}`); /* check if the room id generated. */
+	  res.redirect(`/${roomId}`); /* check if the room id generated. */
 	} else {
 	  res.status(500).send("Failed to generate a valid room ID."); /* if the id not generated response with http status 500(internal server problem) */
 	}
