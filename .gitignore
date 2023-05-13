@@ -1,4 +1,1 @@
-.DS_Store
-.dist
-.git
-
+node_modules
